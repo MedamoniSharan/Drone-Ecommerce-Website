@@ -151,36 +151,30 @@ export default function ProductsPage() {
 
       <div className="pt-[98px] md:pt-[113px]">
         {/* Category icon strip */}
-        <section className="border-b border-gray-100 bg-white">
-          <div className="max-w-[1540px] mx-auto px-4 md:px-8 py-6 overflow-x-auto">
-            <div className="flex items-start justify-center gap-6 md:gap-10 min-w-max md:min-w-0">
+        <section className="bg-white">
+          <div className="max-w-[1540px] mx-auto px-4 md:px-8 py-8 overflow-x-auto">
+            <div className="flex items-start justify-center gap-8 md:gap-14 min-w-max md:min-w-0">
               {CATEGORY_ICONS.map((cat) => {
                 const isActive = cat.slug === activeCategory;
                 return (
                   <Link
                     key={cat.id}
                     to={`/products/${cat.slug}`}
-                    className="flex flex-col items-center gap-2 group w-[72px] md:w-[88px] shrink-0"
+                    className="flex flex-col items-center gap-3 group w-[80px] md:w-[96px] shrink-0"
                   >
-                    <div
-                      className={cn(
-                        'w-14 h-14 md:w-16 md:h-16 rounded-xl overflow-hidden flex items-center justify-center transition-transform group-hover:scale-105',
-                        isActive ? 'bg-black ring-2 ring-black ring-offset-2' : 'bg-gray-50',
-                      )}
-                    >
+                    <div className="w-16 h-16 md:w-20 md:h-20 flex items-center justify-center transition-transform duration-200 group-hover:scale-110">
                       <img
                         src={cat.image}
                         alt={cat.label}
-                        className={cn(
-                          'w-full h-full object-cover',
-                          isActive && 'brightness-110 contrast-125',
-                        )}
+                        className="w-full h-full object-contain"
                       />
                     </div>
                     <span
                       className={cn(
-                        'text-[11px] md:text-xs font-bold text-center leading-tight',
-                        isActive ? 'text-black' : 'text-gray-600 group-hover:text-black',
+                        'text-[13px] md:text-sm text-center leading-tight transition-colors',
+                        isActive
+                          ? 'font-bold text-black'
+                          : 'font-semibold text-gray-900 group-hover:text-cyan-600',
                       )}
                     >
                       {cat.label}

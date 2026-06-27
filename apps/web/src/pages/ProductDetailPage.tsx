@@ -75,9 +75,9 @@ export default function ProductDetailPage() {
         </div>
 
         <section className="max-w-[1200px] mx-auto px-4 md:px-8 pb-16">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
             {/* Gallery */}
-            <div className="flex gap-4">
+            <div className="flex gap-4 lg:sticky lg:top-[130px] self-start">
               <div className="hidden sm:flex flex-col gap-3 shrink-0">
                 {gallery.map((image, index) => (
                   <button
@@ -85,27 +85,27 @@ export default function ProductDetailPage() {
                     type="button"
                     onClick={() => setActiveImage(index)}
                     className={cn(
-                      'w-16 h-16 md:w-20 md:h-20 rounded-lg overflow-hidden border-2 transition-all bg-gray-50',
-                      activeImage === index ? 'border-black' : 'border-transparent hover:border-gray-300',
+                      'w-16 h-16 md:w-20 md:h-20 rounded-lg overflow-hidden border-2 transition-all bg-white',
+                      activeImage === index ? 'border-black' : 'border-gray-200 hover:border-gray-400',
                     )}
                   >
-                    <img src={image} alt="" className="w-full h-full object-cover" />
+                    <img src={image} alt="" className="w-full h-full object-contain" />
                   </button>
                 ))}
               </div>
 
-              <div className="relative flex-1 aspect-square bg-[#f5f5f5] rounded-2xl overflow-hidden">
+              <div className="relative flex-1 aspect-square bg-white rounded-2xl overflow-hidden">
                 <img
                   src={gallery[activeImage]}
                   alt={product.title}
-                  className="w-full h-full object-contain p-6"
+                  className="w-full h-full object-contain"
                 />
                 {gallery.length > 1 && (
                   <>
                     <button
                       type="button"
                       onClick={goPrev}
-                      className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/90 shadow-md flex items-center justify-center hover:bg-white transition-colors"
+                      className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black text-white shadow-md flex items-center justify-center hover:bg-gray-800 transition-colors"
                       aria-label="Previous image"
                     >
                       <ChevronLeft className="w-5 h-5" />
@@ -113,7 +113,7 @@ export default function ProductDetailPage() {
                     <button
                       type="button"
                       onClick={goNext}
-                      className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/90 shadow-md flex items-center justify-center hover:bg-white transition-colors"
+                      className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black text-white shadow-md flex items-center justify-center hover:bg-gray-800 transition-colors"
                       aria-label="Next image"
                     >
                       <ChevronRight className="w-5 h-5" />
