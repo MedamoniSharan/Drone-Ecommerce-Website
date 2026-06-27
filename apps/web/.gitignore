@@ -1,0 +1,17 @@
+.DS_Store
+/node_modules/
+
+# Vite
+/dist/
+
+# Environment
+.env
+.env.local
+.env.production.local
+.env.development.local
+
+# TypeScript
+*.tsbuildinfo
+
+# Vitest
+.vitest/
