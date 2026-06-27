@@ -6,21 +6,24 @@ const categories = [
   {
     title: 'DJI Drones',
     description: 'Capture your moments from above.',
-    image: 'https://raw.createusercontent.com/c9c460fa-9d2e-46ea-92c6-31e935cb1ea8/',
+    image:
+      'https://zonealpha.in/cdn/shop/files/E88-PRO-Drone-4K-with-Wide-Angle-HD-4K-Dual-Camera-Height-Hold-WiFi-RC-Foldable-Quadcopter-E88-Drone_result.webp?v=1763735715&width=800',
     link: '/drones',
     span: 'col-span-2 row-span-2',
   },
   {
     title: 'Handheld Gimbals',
     description: 'Stable footage, anywhere.',
-    image: 'https://raw.createusercontent.com/36eac728-4cd5-401b-bb65-5aecf15424ec/',
+    image:
+      'https://djiindiashop.com/cdn/shop/files/ChatGPT_Image_May_8_2026_02_10_50_PM.png?v=1778229674&width=1092',
     link: '/gimbals',
     span: 'col-span-1 row-span-1',
   },
   {
     title: 'Action Cameras',
     description: 'Built for adventure.',
-    image: 'https://raw.createusercontent.com/6f772b99-d5dd-43a9-9e68-203fe9bc73e2/',
+    image:
+      'https://djiindiashop.com/cdn/shop/files/imgi_86_07a460c41963750113b6f2d649e5873c_ultra_1068aeaa-cd51-43cb-8016-6ebd47fd8228.webp?v=1769678486&width=1280',
     link: '/action',
     span: 'col-span-1 row-span-1',
   },
@@ -28,7 +31,7 @@ const categories = [
     title: 'Accessories',
     description: 'Enhance your experience.',
     image:
-      'https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&q=80&w=800',
+      'https://images.unsplash.com/photo-1473968512647-3e44a224fe8f?auto=format&fit=crop&q=80&w=800',
     link: '/accessories',
     span: 'col-span-1 row-span-1',
   },
@@ -36,7 +39,7 @@ const categories = [
     title: 'New Arrivals',
     description: 'Explore the latest tech.',
     image:
-      'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&q=80&w=800',
+      'https://djiindiashop.com/cdn/shop/files/65c07cfe987bdaa28a3da5ec65f50e84_ultra_11fbd1a3-ead9-45e2-8b5b-c3af2d8df677.webp?v=1781515087&width=1280',
     link: '/new-arrivals',
     span: 'col-span-1 row-span-1',
   },

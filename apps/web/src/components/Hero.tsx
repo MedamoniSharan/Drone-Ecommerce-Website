@@ -84,44 +84,8 @@ const Hero = () => {
           className="absolute inset-0 z-0"
         >
           <img src={slide.image} alt={slide.title} className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-black/10" />
         </motion.div>
       </AnimatePresence>
-
-      {/* Slide content */}
-      <div className="container mx-auto px-4 h-full relative z-20 flex items-center">
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={current}
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.6, ease: 'easeOut' }}
-            className="max-w-xl"
-          >
-            <span className="inline-block bg-cyan-500 text-black text-[10px] font-extrabold uppercase tracking-[0.25em] px-4 py-1.5 mb-6">
-              {slide.badge}
-            </span>
-
-            <h1 className="text-5xl md:text-7xl font-black text-white leading-[0.95] tracking-tighter uppercase mb-4">
-              {slide.title}
-            </h1>
-
-            <p className="text-cyan-400 text-xl md:text-2xl font-light italic tracking-tight mb-5">
-              {slide.subtitle}
-            </p>
-
-            <p className="text-white/80 text-base md:text-lg leading-relaxed max-w-md mb-8">
-              {slide.description}
-            </p>
-
-            <button className="group inline-flex items-center gap-2 bg-white text-black font-bold uppercase tracking-wider text-sm px-8 py-4 hover:bg-cyan-500 hover:text-black transition-colors">
-              {slide.cta}
-              <ChevronRight size={18} className="group-hover:translate-x-1 transition-transform" />
-            </button>
-          </motion.div>
-        </AnimatePresence>
-      </div>
 
       {/* Side navigation arrows */}
       <button

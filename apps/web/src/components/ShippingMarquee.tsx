@@ -39,11 +39,19 @@ const MARQUEE_ITEMS: MarqueeItemProps[] = [
 ];
 
 const MarqueeItem: React.FC<MarqueeItemProps> = ({ icon, text }) => (
-  <div className="flex items-center gap-10 px-10 shrink-0 select-none">
+  <div className="flex w-[280px] shrink-0 select-none items-center justify-center gap-5 px-8 sm:w-[340px] sm:gap-8">
     <div className="text-black flex items-center justify-center shrink-0">{icon}</div>
-    <span className="text-lg font-bold text-black uppercase tracking-tight whitespace-nowrap">
+    <span className="text-base sm:text-lg font-bold text-black uppercase tracking-tight whitespace-nowrap">
       {text}
     </span>
+  </div>
+);
+
+const MarqueeGroup = ({ items }: { items: MarqueeItemProps[] }) => (
+  <div className="flex shrink-0 whitespace-nowrap">
+    {items.map((item, index) => (
+      <MarqueeItem key={`${item.text}-${index}`} {...item} />
+    ))}
   </div>
 );
 
@@ -52,29 +60,17 @@ const MarqueeItem: React.FC<MarqueeItemProps> = ({ icon, text }) => (
  * Premium, minimalist aesthetic inspired by high-end e-commerce.
  */
 export const ShippingMarquee: React.FC = () => {
-  const duplicatedItems = Array(12).fill(MARQUEE_ITEMS).flat();
+  const repeatedItems = Array(8).fill(MARQUEE_ITEMS).flat();
   return (
     <section className="w-full bg-[#F5F5F5] py-3 overflow-hidden border-y border-black/5">
-      <div className="relative flex">
-        <motion.div
-          className="flex whitespace-nowrap"
-          animate={{ x: [0, -1034] }}
-          transition={{ duration: 30, repeat: Infinity, ease: 'linear' }}
-        >
-          {duplicatedItems.map((item, index) => (
-            <MarqueeItem key={`marquee-1-${index}`} {...item} />
-          ))}
-        </motion.div>
-        <motion.div
-          className="flex whitespace-nowrap absolute top-0 left-full"
-          animate={{ x: [0, -1034] }}
-          transition={{ duration: 30, repeat: Infinity, ease: 'linear' }}
-        >
-          {duplicatedItems.map((item, index) => (
-            <MarqueeItem key={`marquee-2-${index}`} {...item} />
-          ))}
-        </motion.div>
-      </div>
+      <motion.div
+        className="flex w-max"
+        animate={{ x: ['0%', '-50%'] }}
+        transition={{ duration: 60, repeat: Infinity, ease: 'linear' }}
+      >
+        <MarqueeGroup items={repeatedItems} />
+        <MarqueeGroup items={repeatedItems} />
+      </motion.div>
     </section>
   );
 };
