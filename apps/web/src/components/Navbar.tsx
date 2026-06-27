@@ -156,6 +156,24 @@ const MobileNav = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }
               </Link>
             ))}
           </nav>
+
+          <div className="mt-auto flex flex-col gap-3 pt-6">
+            <Link
+              to="/account/signin"
+              onClick={onClose}
+              className="flex items-center justify-center gap-2 rounded-full bg-black text-white py-3 text-sm font-bold"
+            >
+              <User className="w-4 h-4" />
+              Sign In
+            </Link>
+            <Link
+              to="/account/signup"
+              onClick={onClose}
+              className="text-center text-sm font-medium text-neutral-600"
+            >
+              Create an account
+            </Link>
+          </div>
         </motion.div>
       </>
     )}
@@ -229,7 +247,8 @@ const Navbar = () => {
             >
               <Search className="w-[18px] h-[18px]" />
             </button>
-            <button
+            <Link
+              to="/account/signin"
               className="hidden sm:flex p-2 hover:bg-white/10 rounded-full transition-colors relative"
               aria-label="Account"
             >
@@ -241,7 +260,7 @@ const Navbar = () => {
                   </svg>
                 </div>
               </div>
-            </button>
+            </Link>
             <button
               type="button"
               onClick={openCart}

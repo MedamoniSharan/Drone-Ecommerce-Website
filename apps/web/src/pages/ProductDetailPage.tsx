@@ -44,8 +44,8 @@ export default function ProductDetailPage() {
   const batteryOptions = product?.batteryOptions ?? ['Standard Battery'];
 
   const [activeImage, setActiveImage] = useState(0);
-  const [selectedModel, setSelectedModel] = useState(models[0]);
-  const [selectedBattery, setSelectedBattery] = useState(batteryOptions[0]);
+  const selectedModel = models[0];
+  const selectedBattery = batteryOptions[0];
   const { addItem } = useCart();
 
   if (!product) {
@@ -217,54 +217,6 @@ export default function ProductDetailPage() {
                 </div>
               )}
 
-              {/* Model selector */}
-              <div>
-                <p className="text-sm font-semibold text-gray-900 mb-3">
-                  Model: <span className="font-normal text-gray-600">{selectedModel}</span>
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  {models.map((model) => (
-                    <button
-                      key={model}
-                      type="button"
-                      onClick={() => setSelectedModel(model)}
-                      className={cn(
-                        'px-4 py-2.5 rounded-full text-sm font-medium border transition-colors',
-                        selectedModel === model
-                          ? 'bg-black text-white border-black'
-                          : 'bg-white text-gray-800 border-gray-300 hover:border-gray-500',
-                      )}
-                    >
-                      {model}
-                    </button>
-                  ))}
-                </div>
-              </div>
-
-              {/* Battery selector */}
-              <div>
-                <p className="text-sm font-semibold text-gray-900 mb-3">
-                  Battery: <span className="font-normal text-gray-600">{selectedBattery}</span>
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  {batteryOptions.map((option) => (
-                    <button
-                      key={option}
-                      type="button"
-                      onClick={() => setSelectedBattery(option)}
-                      className={cn(
-                        'px-4 py-2.5 rounded-full text-sm font-medium border transition-colors',
-                        selectedBattery === option
-                          ? 'bg-black text-white border-black'
-                          : 'bg-white text-gray-800 border-gray-300 hover:border-gray-500',
-                      )}
-                    >
-                      {option}
-                    </button>
-                  ))}
-                </div>
-              </div>
-
               {/* Add to cart */}
               <button
                 type="button"
@@ -279,7 +231,7 @@ export default function ProductDetailPage() {
                     battery: selectedBattery,
                   })
                 }
-                className="w-full py-4 rounded-xl text-base font-bold transition-all mt-2 bg-[#f97316] hover:bg-[#ea580c] text-black active:scale-[0.99]"
+                className="w-full py-4 rounded-xl text-base font-bold transition-all mt-2 bg-black hover:bg-gray-800 text-white active:scale-[0.99]"
               >
                 Add to cart
               </button>

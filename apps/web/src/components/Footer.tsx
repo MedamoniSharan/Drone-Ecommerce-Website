@@ -32,14 +32,14 @@ const socials = [
 
 const Footer = () => {
   return (
-    <footer className="bg-white text-gray-900 pt-16 overflow-hidden">
+    <footer className="bg-[#0a0a0a] text-white pt-16 overflow-hidden">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-10 pb-12">
           {/* Link columns */}
           {linkColumns.map((column, i) => (
-            <nav key={i} className="flex flex-col gap-3 text-[15px] font-medium text-gray-700">
+            <nav key={i} className="flex flex-col gap-3 text-[15px] font-medium text-gray-300">
               {column.map((label) => (
-                <Link key={label} to="#" className="hover:text-cyan-600 transition-colors w-fit">
+                <Link key={label} to="#" className="hover:text-cyan-400 transition-colors w-fit">
                   {label}
                 </Link>
               ))}
@@ -49,24 +49,24 @@ const Footer = () => {
           {/* Brand + newsletter */}
           <div className="col-span-2 md:col-span-1 flex flex-col items-center text-center gap-4">
             <Link to="/" className="text-2xl font-extrabold tracking-tight">
-              DJI <span className="text-cyan-600">INDIA</span>
+              DJI <span className="text-cyan-400">INDIA</span>
             </Link>
-            <p className="text-sm text-gray-500 leading-relaxed max-w-[260px]">
+            <p className="text-sm text-gray-400 leading-relaxed max-w-[260px]">
               Empowering creators to capture the world with clarity, control, and confidence.
             </p>
             <form
               onSubmit={(e) => e.preventDefault()}
-              className="flex items-center w-full max-w-[300px] rounded-full bg-gray-100 pl-5 pr-1.5 py-1.5"
+              className="flex items-center w-full max-w-[300px] rounded-full bg-white/10 pl-5 pr-1.5 py-1.5"
             >
               <input
                 type="email"
                 placeholder="Enter Your Email"
-                className="flex-1 bg-transparent text-sm text-gray-700 placeholder:text-gray-400 focus:outline-none"
+                className="flex-1 bg-transparent text-sm text-white placeholder:text-gray-400 focus:outline-none"
               />
               <button
                 type="submit"
                 aria-label="Subscribe"
-                className="w-9 h-9 rounded-full bg-gray-900 text-white flex items-center justify-center hover:bg-cyan-600 transition-colors shrink-0"
+                className="w-9 h-9 rounded-full bg-white text-black flex items-center justify-center hover:bg-cyan-400 transition-colors shrink-0"
               >
                 <ArrowRight size={16} />
               </button>
@@ -90,8 +90,8 @@ const Footer = () => {
               ))}
             </div>
             <div className="md:text-right">
-              <p className="text-base font-bold text-gray-900">(+91) 99999 99999</p>
-              <p className="text-sm text-gray-500 mt-1">New Delhi, India - 110001</p>
+              <p className="text-base font-bold text-white">(+91) 99999 99999</p>
+              <p className="text-sm text-gray-400 mt-1">New Delhi, India - 110001</p>
             </div>
           </div>
         </div>
@@ -99,7 +99,7 @@ const Footer = () => {
 
       {/* Oversized faded brand text */}
       <div className="relative select-none pointer-events-none">
-        <h2 className="text-center font-extrabold tracking-tighter leading-none text-[18vw] text-black">
+        <h2 className="text-center font-extrabold tracking-tighter leading-none text-[18vw] text-white">
           DJI INDIA
         </h2>
       </div>
