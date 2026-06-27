@@ -99,7 +99,7 @@ const Footer = () => {
 
       {/* Oversized faded brand text */}
       <div className="relative select-none pointer-events-none">
-        <h2 className="text-center font-extrabold tracking-tighter leading-none text-[18vw] bg-gradient-to-b from-gray-300 to-white bg-clip-text text-transparent">
+        <h2 className="text-center font-extrabold tracking-tighter leading-none text-[18vw] text-black">
           DJI INDIA
         </h2>
       </div>

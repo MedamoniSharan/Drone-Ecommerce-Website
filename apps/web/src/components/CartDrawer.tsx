@@ -1,4 +1,5 @@
 import React, { useMemo } from 'react';
+import { Link } from 'react-router-dom';
 import { Minus, Plus, Trash2 } from 'lucide-react';
 import {
   Sheet,
@@ -13,6 +14,7 @@ import {
 } from '@/context/CartContext';
 import { buildWhatsAppOrderUrl } from '@/lib/whatsapp';
 import { cn } from '@/lib/utils';
+import LottiePlayer from '@/components/LottiePlayer';
 
 export default function CartDrawer() {
   const { items, itemCount, isOpen, closeCart, removeItem, updateQuantity } = useCart();
@@ -61,7 +63,20 @@ export default function CartDrawer() {
 
         <div className="flex-1 overflow-y-auto px-5 py-4">
           {items.length === 0 ? (
-            <p className="text-sm text-gray-500 text-center py-12">Your cart is empty.</p>
+            <div className="flex flex-col items-center justify-center h-full text-center gap-3">
+              <LottiePlayer src="/Drone.json" className="w-56 h-56" />
+              <p className="text-base font-semibold text-gray-900">Your cart is empty</p>
+              <p className="text-sm text-gray-500 max-w-[260px]">
+                Browse our products and add drones and gadgets to get started.
+              </p>
+              <Link
+                to="/products/drones"
+                onClick={closeCart}
+                className="mt-2 px-6 py-2.5 rounded-lg bg-gray-900 text-white text-sm font-semibold hover:bg-gray-800 transition-colors"
+              >
+                Browse Products
+              </Link>
+            </div>
           ) : (
             <div className="space-y-4">
               {items.map((item) => (

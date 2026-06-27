@@ -74,6 +74,7 @@
 }
 
 @theme inline {
+    --font-albert: 'Albert Sans', serif;
     --color-background: var(--background);
     --color-foreground: var(--foreground);
     --color-card: var(--card);
